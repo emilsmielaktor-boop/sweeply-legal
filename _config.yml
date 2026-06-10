@@ -1,0 +1,7 @@
+title: Sweeply Legal
+description: Privacy Policy and Terms of Service for the Sweeply mobile app
+theme: minima
+plugins:
+  - jekyll-feed
+exclude:
+  - README.md
