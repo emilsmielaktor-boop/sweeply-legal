@@ -4,7 +4,7 @@ title: Privacy Policy
 permalink: /privacy
 ---
 
-**Effective date:** 2026-06-10
+**Effective date:** 2026-06-14
 
 This Privacy Policy describes how Sweeply ("we", "us", "the app") collects, uses, and shares information when you use our mobile app.
 
@@ -21,8 +21,9 @@ When you create an account and use Sweeply, we collect:
 - **Social data:** your friends list, friend requests sent and received, upvotes you give, comments you post, users you've blocked.
 - **Reports:** if you report a recording, we log the recording ID, your user ID, and the timestamp.
 - **Device info:** device platform (iOS or Android), provided when you use the Feedback button.
+- **Country (optional, opt-in per recording):** when you tick "📍 Tag this clip with my country" before saving a recording, we ask your device for your approximate location, convert it to a country **on your device**, and save only the country code (e.g. "NO") and country name (e.g. "Norway") with that recording. **Your exact coordinates are never sent to our servers, never stored, and never shared.** Tagging is off by default and chosen per recording.
 
-We do **not** collect: precise location, contacts list, browsing history, advertising identifiers, or biometric data. We do **not** use third-party analytics, advertising SDKs, or trackers.
+We do **not** collect: precise location (we only derive country on-device, see above), contacts list, browsing history, advertising identifiers, or biometric data. We do **not** use third-party analytics, advertising SDKs, or trackers.
 
 ## 3. How we use it
 
@@ -42,6 +43,7 @@ We do not have direct access to your raw password (Firebase handles authenticati
 ## 5. Who can see your data
 
 - **Your username, display name, bio, profile photo, and recordings** are visible to all signed-in Sweeply users via the leaderboards and your public profile.
+- **Country tags on recordings** (if you opted in) are visible to all signed-in users alongside the recording.
 - **Your friends list** is visible only to you.
 - **Friend requests** are visible only to you and the recipient.
 - **Comments** are visible to all signed-in users who can view the recording they belong to.
