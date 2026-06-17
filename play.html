@@ -83,14 +83,15 @@ permalink: /play
     }
     // Encode each segment but keep slashes (Cloudinary public IDs are paths).
     var safeId = id.split('/').map(encodeURIComponent).join('/');
-    // Use the original upload format (.m4a). Cloudinary doesn't have to
-    // transcode — only the volume-boost derivative needs to build, which is
-    // fast. .mp3 was unreliable: first request hangs while Cloudinary builds
-    // the transcode, audio element times out, then it works from cache on
-    // subsequent opens (Notes/WhatsApp) — confusing UX.
-    var src = 'https://res.cloudinary.com/' + cloud + '/video/upload/e_volume:50/' + safeId + '.m4a';
+    // Use the raw uploaded .m4a with NO transformations. Cloudinary serves
+    // this directly from CDN — no derivative build, no delay. Any transform
+    // (e.g. e_volume:50) forces Cloudinary to build a derivative on the
+    // first request; that build takes 3-10s, during which the <audio>
+    // element times out and shows "broken." Recipient can crank phone
+    // volume to compensate for the un-boosted clip.
+    var src = 'https://res.cloudinary.com/' + cloud + '/video/upload/' + safeId + '.m4a';
     var retries = 0;
-    var MAX_RETRIES = 2;
+    var MAX_RETRIES = 3;
     function showError() {
       err.style.display = 'block';
       player.style.display = 'none';
