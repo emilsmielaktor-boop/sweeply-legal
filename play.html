@@ -83,19 +83,28 @@ permalink: /play
     }
     // Encode each segment but keep slashes (Cloudinary public IDs are paths).
     var safeId = id.split('/').map(encodeURIComponent).join('/');
-    var primary = 'https://res.cloudinary.com/' + cloud + '/video/upload/e_volume:50/' + safeId + '.mp3';
-    var fallback = 'https://res.cloudinary.com/' + cloud + '/video/upload/e_volume:50/' + safeId + '.m4a';
-    var triedFallback = false;
-    player.addEventListener('error', function () {
-      if (!triedFallback) {
-        triedFallback = true;
-        player.src = fallback;
-        return;
-      }
+    // Use the original upload format (.m4a). Cloudinary doesn't have to
+    // transcode — only the volume-boost derivative needs to build, which is
+    // fast. .mp3 was unreliable: first request hangs while Cloudinary builds
+    // the transcode, audio element times out, then it works from cache on
+    // subsequent opens (Notes/WhatsApp) — confusing UX.
+    var src = 'https://res.cloudinary.com/' + cloud + '/video/upload/e_volume:50/' + safeId + '.m4a';
+    var retries = 0;
+    var MAX_RETRIES = 2;
+    function showError() {
       err.style.display = 'block';
       player.style.display = 'none';
+    }
+    player.addEventListener('error', function () {
+      if (retries < MAX_RETRIES) {
+        retries++;
+        // Derived asset may still be building on Cloudinary. Wait and retry.
+        setTimeout(function () { player.load(); }, 1500);
+        return;
+      }
+      showError();
     });
-    player.src = primary;
+    player.src = src;
   })();
 </script>
 </body>
