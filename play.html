@@ -1,0 +1,102 @@
+---
+layout: null
+permalink: /play
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>A Sweeply clip 🎙</title>
+<meta name="theme-color" content="#0B0B0F">
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    background: #0B0B0F;
+    color: #F3F3F7;
+  }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .card {
+    max-width: 440px;
+    width: 100%;
+    background: #16161D;
+    border: 1px solid #23232E;
+    border-radius: 24px;
+    padding: 28px 26px;
+    text-align: center;
+  }
+  .emoji { font-size: 64px; line-height: 1; margin-bottom: 10px; }
+  h1 { margin: 0 0 6px; font-size: 22px; font-weight: 800; }
+  p.sub { color: #9CA0B0; margin: 0 0 18px; font-size: 14px; }
+  audio {
+    width: 100%;
+    margin: 10px 0 6px;
+    accent-color: #FF3DA8;
+  }
+  .hint { color: #5C5F6E; font-size: 12px; margin: 8px 0 18px; }
+  a.cta {
+    display: inline-block;
+    background: #FF3DA8;
+    color: #0B0B0F;
+    text-decoration: none;
+    padding: 13px 26px;
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 15px;
+    margin-top: 4px;
+  }
+  a.cta:active { opacity: 0.8; }
+  .err { color: #FF6B6B; font-size: 13px; margin-top: 10px; display: none; }
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="emoji">🎙</div>
+  <h1>A Sweeply clip</h1>
+  <p class="sub">An animal-sound recording shared with you.</p>
+  <audio id="player" controls preload="auto" playsinline></audio>
+  <p class="hint">Tap ▶ to play</p>
+  <p id="err" class="err">Could not load this clip. The link may be broken.</p>
+  <a class="cta" href="https://emilsmielaktor-boop.github.io/sweeply-legal/">What is Sweeply? →</a>
+</main>
+<script>
+  (function () {
+    var qs = new URLSearchParams(window.location.search);
+    var id = qs.get('id');
+    var cloud = qs.get('c') || 'do3jjuyv6';
+    var player = document.getElementById('player');
+    var err = document.getElementById('err');
+    if (!id) {
+      err.style.display = 'block';
+      player.style.display = 'none';
+      return;
+    }
+    // Encode each segment but keep slashes (Cloudinary public IDs are paths).
+    var safeId = id.split('/').map(encodeURIComponent).join('/');
+    var primary = 'https://res.cloudinary.com/' + cloud + '/video/upload/e_volume:50/' + safeId + '.mp3';
+    var fallback = 'https://res.cloudinary.com/' + cloud + '/video/upload/e_volume:50/' + safeId + '.m4a';
+    var triedFallback = false;
+    player.addEventListener('error', function () {
+      if (!triedFallback) {
+        triedFallback = true;
+        player.src = fallback;
+        return;
+      }
+      err.style.display = 'block';
+      player.style.display = 'none';
+    });
+    player.src = primary;
+  })();
+</script>
+</body>
+</html>
