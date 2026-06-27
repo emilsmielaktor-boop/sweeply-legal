@@ -4,7 +4,7 @@ title: Terms of Service
 permalink: /terms
 ---
 
-**Effective date:** 2026-06-10
+**Effective date:** 2026-06-27
 
 By using Sweeply ("the app"), you agree to these terms. If you don't agree, please don't use the app.
 
@@ -37,30 +37,43 @@ You agree not to:
 
 We may remove content and ban accounts at our discretion when these rules are broken.
 
-## 5. Reporting
+## 5. Animal safety
+
+Sweeply is for recording sounds animals make on their own. We do **not** encourage approaching, chasing, cornering, touching, feeding, provoking, or interacting with any animal — wild, farm, domestic, or otherwise — in order to record it.
+
+Please:
+
+- Keep a safe distance from any animal you don't know.
+- Never enter private property, enclosed pastures, restricted habitats, or protected reserves to record.
+- If an animal seems distressed, leave it alone and tell an adult.
+- Follow all local laws and posted rules about wildlife, fishing, hunting, and protected species.
+
+**You use the app and interact with animals entirely at your own risk.** To the maximum extent permitted by law, Sweeply and its developer are not responsible for any injury, illness, property damage, or other harm caused to you, to other people, or to animals as a result of your activities while using the app. Using Sweeply does not grant you any right or permission to engage in unsafe, harmful, or unlawful behavior.
+
+## 6. Reporting
 
 Use the report button (⚠️) on any recording you believe violates these terms. We review reports manually.
 
-## 6. Termination
+## 7. Termination
 
 You can delete your account at any time via Profile → Account → Delete account. We may suspend or terminate accounts that violate these terms, abuse the service, or pose a risk to other users.
 
-## 7. Service availability
+## 8. Service availability
 
 Sweeply is provided "as is". We make no guarantees about uptime, data loss, or fitness for any particular purpose. The app depends on third-party services (Firebase, Cloudinary, Apple, Google) that may have their own outages.
 
-## 8. Limitation of liability
+## 9. Limitation of liability
 
 To the maximum extent permitted by law, Sweeply and its developer are not liable for indirect, incidental, or consequential damages arising from your use of the app, including data loss, lost profits, or service interruptions.
 
-## 9. Changes to these terms
+## 10. Changes to these terms
 
 We may update these terms. If we make material changes, we will update the Effective date and notify users in the app. Continued use after a change means you accept the updated terms.
 
-## 10. Governing law
+## 11. Governing law
 
 These terms are governed by the laws of **Norway**. Disputes will be handled by the competent courts there, unless local consumer-protection law provides otherwise.
 
-## 11. Contact
+## 12. Contact
 
 Questions? Email **emilsmielak.tor@gmail.com**.
