@@ -39,12 +39,14 @@ We may remove content and ban accounts at our discretion when these rules are br
 
 ## 5. Animal safety
 
-Sweeply is for recording sounds animals make on their own. We do **not** encourage approaching, chasing, cornering, touching, feeding, provoking, or interacting with any animal — wild, farm, domestic, or otherwise — in order to record it.
+Sweeply is for recording the sounds animals make on their own. We do **not** encourage chasing, cornering, provoking, frightening, or otherwise harming any animal — wild, farm, domestic, or otherwise — in order to get a recording.
 
-Please:
+When you do approach or be near an animal, please do it safely and respectfully:
 
 - Keep a safe distance from any animal you don't know.
-- Never enter private property, enclosed pastures, restricted habitats, or protected reserves to record.
+- Never chase, corner, provoke, frighten, or harm an animal.
+- Don't touch or feed animals you don't know; at parks, farms, zoos, and reserves, follow the posted rules.
+- Never enter private property, enclosed pastures, restricted habitats, or protected reserves without permission.
 - If an animal seems distressed, leave it alone and tell an adult.
 - Follow all local laws and posted rules about wildlife, fishing, hunting, and protected species.
 
